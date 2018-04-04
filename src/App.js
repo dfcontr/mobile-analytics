@@ -42,10 +42,18 @@ const tabs = [
   }*/
 ];
 
-// this will start our app
-Navigation.startTabBasedApp({
-  tabs,
-  animationType: Platform.OS === 'ios' ? 'slide-down' : 'fade'
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: 'analytics.Login',
+    title: 'Login'
+  }
 });
+
+export function enableSignedInFlow() {
+  Navigation.startTabBasedApp({
+    tabs,
+    animationType: Platform.OS === 'ios' ? 'slide-down' : 'fade'
+  });
+}
 
 console.disableYellowBox = true;

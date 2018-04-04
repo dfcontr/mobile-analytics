@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
+import Analytics from 'react-native-analytics-segment-io';
 
 class Checkout extends Component {
   pushScreen = () => {
@@ -10,7 +11,9 @@ class Checkout extends Component {
   };
 
   completeCheckoutStep = step => {
-    //
+    Analytics.track('Checkout step completed', {
+      step
+    });
   };
 
   render() {
@@ -18,15 +21,15 @@ class Checkout extends Component {
       <View style={{ flex: 1, justifyContent: 'center' }}>
         <Button
           title="Checkout step 1"
-          onPress={() => this.completeCheckoutStep(1)}
+          onPress={() => this.completeCheckoutStep('Summary')}
         />
         <Button
           title="Checkout step 2"
-          onPress={() => this.completeCheckoutStep(2)}
+          onPress={() => this.completeCheckoutStep('Billing')}
         />
         <Button
           title="Checkout step 3"
-          onPress={() => this.completeCheckoutStep(3)}
+          onPress={() => this.completeCheckoutStep('Shipping')}
         />
         <Button title="Go to confirmation view" onPress={this.pushScreen} />
       </View>

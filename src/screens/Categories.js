@@ -7,7 +7,7 @@ class Categories extends Component {
       screen: 'analytics.ProductDetail',
       title: `Product ${product} Detail`,
       passProps: {
-        product: { name: `Product ${product} Detail`, cost: `$${product}0` }
+        product: { name: `Product ${product} Detail`, cost: product * 10 }
       }
     });
   };

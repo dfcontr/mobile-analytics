@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Button } from 'react-native';
 
 class Home extends Component {
+  state = {
+    name: ''
+  };
+
   pushScreen = () => {
     this.props.navigator.push({
       screen: 'analytics.Categories',
@@ -11,7 +15,7 @@ class Home extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center' }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Button title="Go to categories view" onPress={this.pushScreen} />
       </View>
     );
