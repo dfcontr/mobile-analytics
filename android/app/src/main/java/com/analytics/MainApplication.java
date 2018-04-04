@@ -3,6 +3,7 @@ package com.analytics;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.leo_pharma.analytics.AnalyticsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;

@@ -9,6 +9,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import "RCCManager.h"
 #import <React/RCTRootView.h>
+#import <Analytics/SEGAnalytics.h>
 
 @implementation AppDelegate
 
@@ -25,6 +26,10 @@
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   self.window.backgroundColor = [UIColor whiteColor];
   [[RCCManager sharedInstance] initBridgeWithBundleURL:jsCodeLocation launchOptions:launchOptions];
+  
+  SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"fhesydB3paFOqRLOfbcgVzuL1SDs7o5A"];
+  
+  [SEGAnalytics setupWithConfiguration:configuration];
   
   
   return YES;
